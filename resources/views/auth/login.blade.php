@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schooler Login</title>
+    <link rel="shortcut icon" type="image/png" href="{{asset('images/images/LOGOSC.png')}}"/>
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">

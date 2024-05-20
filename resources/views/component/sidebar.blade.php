@@ -34,6 +34,14 @@
                 </a>
               </li>
               <li class="sidebar-item">
+                <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-cards"></i>
+                  </span>
+                  <span class="hide-menu">Admin</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
                 <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
                   <span>
                     <i class="ti ti-alert-circle"></i>
@@ -63,4 +71,4 @@
         </div>
         <!-- End Sidebar scroll-->
       </aside>
-      <!--  Sidebar End --
+      <!--  Sidebar End -->

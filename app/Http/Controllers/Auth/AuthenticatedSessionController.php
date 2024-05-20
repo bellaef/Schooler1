@@ -31,11 +31,11 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
-        $user = auth()->user();
+        $users = auth()->user();
 
-        if($user->isAdmin()){
+        if($users->isAdmin()){
             return redirect()->route('admin.page');
-        } elseif($user->isPelanggan()){
+        } elseif($users->isPelanggan()){
             return redirect()->route('pelanggan.page');
         }
 
