@@ -19,15 +19,19 @@ class User extends Authenticatable
         return $this->role==='pelanggan';
     }
 
-    protected $fillable = [
-        'username',
-        'nama',
-        'email',
-        'password',
-        'role',
-        'telepon',
-        'alamat',
-        'email_verified_at',
+    // protected $fillable = [
+    //     'username',
+    //     'nama',
+    //     'email',
+    //     'password',
+    //     'role',
+    //     'telepon',
+    //     'alamat',
+    //     'email_verified_at',
+    // ];
+
+    protected $guarded = [
+        'id',
     ];
 
     protected $hidden = [

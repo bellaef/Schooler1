@@ -25,7 +25,7 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 
 Route::middleware(['auth', 'isAdmin'])->group(function(){
-    Route::get('/admin/index',[AdminController::class,'showAdmin'])->name('admin.page');
+    Route::get('/Dashboard',[AdminController::class,'showAdmin'])->name('admin.page');
 });
 
 Route::middleware(['auth', 'isPelanggan'])->group(function(){
