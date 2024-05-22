@@ -1,5 +1,5 @@
       <!--  Header Start -->
-      <header class="app-header" style="background-color: rgb(73, 73, 73)">
+      <header class="app-header" style="background-color: rgb(81, 143, 201)">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">
             <li class="nav-item d-block d-xl-none">
@@ -8,7 +8,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <h2 style="color:antiquewhite">Schooler's Admin</h2>
+              <h2 style="color:antiquewhite">Schooler's Admin Website</h2>
             </li>
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">

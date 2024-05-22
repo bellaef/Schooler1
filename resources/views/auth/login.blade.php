@@ -44,7 +44,6 @@
                             <div class="text-center">
                                 <button class="btn btn-lg btn-black-default-hover" name="login">Login</button>
                             </div>
-                            <p>Belum punya akun? <a href="{{ route('register') }}">Daftar disini </a> </p>
                         </form>
                     </div>
                 </div>
