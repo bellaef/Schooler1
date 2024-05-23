@@ -36,20 +36,6 @@ class ProductController extends Controller
             $request->gambar->move(public_path('images/images/product'), $imageName);
             $validatedData['gambar'] = $imageName;
         }
-
-        // if ($request->hasFile('gambar')) {
-        //     // Get the original path of the uploaded file
-        //     $originalPath = $request->file('gambar')->getPathName();
-        //     // Define the destination path in the public directory
-        //     $destinationPath = public_path('assets/images/images/product/');
-        //     // Define the new filename
-        //     $newFilename = $request->file('gambar')->getClientOriginalName();
-        //     // Move the file to the destination path
-        //     $request->file('gambar')->move($destinationPath, $newFilename);
-        //     // Save the relative path to the database
-        //     $validatedData['gambar'] = 'images/images/product/' . $newFilename;
-        // }
-
         Product::create($validatedData);
 
         return redirect()->route('products.index')->with('success', 'Produk berhasil ditambahkan');

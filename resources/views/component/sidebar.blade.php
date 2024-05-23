@@ -58,7 +58,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+            <a class="sidebar-link {{ Route::is('ongkir.page') || Route::is('ongkirs.*') ? 'active' : '' }}" href="{{ route('ongkir.page') }}" aria-expanded="false">
               <span>
                 <i class="ti ti-file-description"></i>
               </span>

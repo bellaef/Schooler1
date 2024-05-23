@@ -33,8 +33,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/Data_Admin',[AdminController::class,'index'])->name('dataadmin.page');
     Route::resource('customer', PelangganController::class);
     Route::get('/Data_Pelanggan', [PelangganController::class, 'index'])->name('datapelanggan.page');
-    // Route::get('/Data_Ongkir',[OngkirController::class,'index'])->name('ongkir.page');
-    // Route::resource('Admin', AdminController::class);
+    Route::get('/Data_Ongkir',[OngkirController::class,'index'])->name('ongkir.page');
+    Route::resource('ongkirs', OngkirController::class);
 });
 
 // Route::middleware(['auth', 'isAdmin'])->group(function(){
