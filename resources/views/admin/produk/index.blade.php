@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
+    <h2 class="text-center" style="color: rgb(81, 143, 201)">Data Produk</h2>
     <main class="container">
         <!-- START DATA -->
         <div class="my-3 p-3 bg-body rounded shadow-sm">
@@ -48,7 +49,7 @@
                         <td>{{ $product->berat_produk }}</td>
                         <td>{{ $product->stok_produk }}</td>
                         <td>{{ $product->kategori }}</td>
-                        <td><img src="{{ asset('images/images/product' . $product->gambar) }}" width="100"></td>
+                        <td><img src="{{ asset('images/images/product/' . $product->gambar) }}" width="100"></td>
                         <td>
                             <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
                             <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline-block;">

@@ -31,11 +31,10 @@ class ProductController extends Controller
             'kategori' => 'required|string|max:255',
         ]);
 
-        if ($request->hasFile('gambar')){
+        if ($request->hasFile('gambar')) {
             $imageName = time() . '.' . $request->gambar->extension();
             $request->gambar->move(public_path('images/images/product'), $imageName);
-
-            $validation['gambar'] = $imageName;
+            $validatedData['gambar'] = $imageName;
         }
 
         // if ($request->hasFile('gambar')) {
@@ -73,12 +72,17 @@ class ProductController extends Controller
             'kategori' => 'required|string|max:255',
         ]);
 
-        if ($request->hasFile('gambar')){
+        if ($request->hasFile('gambar')) {
             $imageName = time() . '.' . $request->gambar->extension();
             $request->gambar->move(public_path('images/images/product'), $imageName);
-
-            $validation['gambar'] = $imageName;
+            $validatedData['gambar'] = $imageName;
         }
+
+        $product->update($validatedData);
+
+        return redirect()->route('products.index')->with('success', 'Produk berhasil diperbarui');
+            // $validation['gambar'] = $imageName;
+    }
 
         // if ($request->hasFile('gambar')) {
         //     // Get the original path of the uploaded file
@@ -92,11 +96,6 @@ class ProductController extends Controller
         //     // Save the relative path to the database
         //     $validatedData['gambar'] = 'images/images/product/' . $newFilename;
         // }
-
-        $product->update($validatedData);
-
-        return redirect()->route('products.index')->with('success', 'Produk berhasil diperbarui');
-    }
 
     public function destroy(Product $product): RedirectResponse
     {

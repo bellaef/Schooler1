@@ -34,8 +34,8 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-              <span>
+            <a class="sidebar-link {{ Route::is('dataadmin.page') || Route::is('users.*') ? 'active' : '' }}" href="{{ route('dataadmin.page') }}" aria-expanded="false">
+                <span>
                 <i class="ti ti-cards"></i>
               </span>
               <span class="hide-menu">Admin</span>
