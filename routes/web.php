@@ -28,8 +28,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/Dashboard', [AdminController::class, 'showAdmin'])->name('admin.page');
     Route::resource('products', ProductController::class);
     Route::get('/Data_Produk',[ProductController::class,'index'])->name('product.page');
-    Route::resource('users', AdminController::class);
+    Route::resource('Admin', AdminController::class);
     Route::get('/Data_Admin',[AdminController::class,'index'])->name('dataadmin.page');
+    Route::resource('Pelanggan', PelangganController::class);
+    Route::get('/Data_Pelanggan',[PelangganController::class,'index'])->name('datapelanggan.page');
 });
 
 // Route::middleware(['auth', 'isAdmin'])->group(function(){

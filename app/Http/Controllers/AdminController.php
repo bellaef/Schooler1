@@ -47,7 +47,7 @@ class AdminController extends Controller
 
         User::create($validatedData);
 
-        return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan');
+        return redirect()->route('users.index')->with('success', 'Admin berhasil ditambahkan');
     }
 
     public function edit(User $user): View
@@ -81,13 +81,13 @@ class AdminController extends Controller
 
         $user->update($validatedData);
 
-        return redirect()->route('users.index')->with('success', 'User berhasil diperbarui');
+        return redirect()->route('Admin.index')->with('success', 'Data Admin berhasil diperbarui');
     }
 
     public function destroy(User $user): RedirectResponse
     {
         $user->delete();
-        return redirect()->route('users.index')->with('success', 'User berhasil dihapus');
+        return redirect()->route('Admin.index')->with('success', 'Data Admin berhasil dihapus');
     }
     // public function logout(Request $request){
     //     Auth::guard('web')->logout;

@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h2 class="text-center" style="color: rgb(81, 143, 201)">Tambah Admin</h2>
+    <h2 class="text-center" style="color: rgb(81, 143, 201)">Tambah Data Pelanggan</h2>
     <div class="my-3 p-3 bg-body rounded shadow-sm">
 
         @if ($errors->any())
@@ -16,7 +16,7 @@
             </div>
         @endif
 
-        <form action="{{ route('Admin.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('Pelanggan.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>

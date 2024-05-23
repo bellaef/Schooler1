@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h2 class="text-center" style="color: rgb(81, 143, 201)">Data Admin</h2>
+    <h2 class="text-center" style="color: rgb(81, 143, 201)">Data Pelanggan</h2>
     <main class="container">
         <!-- START DATA -->
         <div class="my-3 p-3 bg-body rounded shadow-sm">
@@ -15,7 +15,7 @@
 
             <!-- TOMBOL TAMBAH DATA -->
             <div class="pb-3">
-                <a href='{{ route('Admin.create') }}' class="btn btn-primary"> + Tambah Data Admin </a>
+                <a href='{{ route('Pelanggan.create') }}' class="btn btn-primary"> + Tambah Data Pelanggan </a>
             </div>
 
             <table class="table table-striped">
@@ -42,8 +42,8 @@
                         <td>{{ $user->alamat }}</td>
                         <td><img src="{{ asset('images/images/user/' . $user->foto) }}" width="100"></td>
                         <td>
-                            <a href="{{ route('Admin.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('Admin.destroy', $user->id) }}" method="POST" style="display:inline-block;">
+                            <a href="{{ route('Pelanggan.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{{ route('Pelanggan.destroy', $user->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Del</button>
