@@ -34,7 +34,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link {{ Route::is('dataadmin.page') || Route::is('Admin.*') ? 'active' : '' }}" href="{{ route('dataadmin.page') }}" aria-expanded="false">
+            <a class="sidebar-link {{ Route::is('dataadmin.page') || Route::is(['Admin.*', 'users.*']) ? 'active' : '' }}" href="{{ route('dataadmin.page') }}" aria-expanded="false">
                 <span>
                 <i class="ti ti-cards"></i>
               </span>
@@ -50,7 +50,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link {{ Route::is('datapelanggan.page') || Route::is('Pelanggan.*') ? 'active' : '' }}" href="{{ route('datapelanggan.page') }}" aria-expanded="false">
+            <a class="sidebar-link {{ Route::is('datapelanggan.page') || Route::is(['Pelanggan.*', 'customer.*']) ? 'active' : '' }}" href="{{ route('datapelanggan.page') }}" aria-expanded="false">
               <span>
                 <i class="ti ti-cards"></i>
               </span>

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OngkirController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,10 +29,12 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/Dashboard', [AdminController::class, 'showAdmin'])->name('admin.page');
     Route::resource('products', ProductController::class);
     Route::get('/Data_Produk',[ProductController::class,'index'])->name('product.page');
-    Route::resource('Admin', AdminController::class);
+    Route::resource('users', AdminController::class);
     Route::get('/Data_Admin',[AdminController::class,'index'])->name('dataadmin.page');
-    Route::resource('Pelanggan', PelangganController::class);
-    Route::get('/Data_Pelanggan',[PelangganController::class,'index'])->name('datapelanggan.page');
+    Route::resource('customer', PelangganController::class);
+    Route::get('/Data_Pelanggan', [PelangganController::class, 'index'])->name('datapelanggan.page');
+    // Route::get('/Data_Ongkir',[OngkirController::class,'index'])->name('ongkir.page');
+    // Route::resource('Admin', AdminController::class);
 });
 
 // Route::middleware(['auth', 'isAdmin'])->group(function(){
@@ -45,8 +48,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
 //     // Route::delete('/Delete_Produk/{id}', [ProductController::class, 'destroy'])->name('delete.product');
 // });
 
-Route::middleware(['auth', 'isPelanggan'])->group(function(){
-    Route::get('/pelanggan/index',[PelangganController::class,'showPelanggan'])->name('pelanggan.page');
-});
+// Route::middleware(['auth', 'isPelanggan'])->group(function(){
+//     Route::get('/pelanggan/index',[PelangganController::class,'showPelanggan'])->name('pelanggan.page');
+// });
 
 require __DIR__.'/auth.php';

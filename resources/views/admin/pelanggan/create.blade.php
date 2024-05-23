@@ -1,4 +1,3 @@
-<!-- resources/views/admin/user/create.blade.php -->
 @extends('component.main')
 
 @section('content')
@@ -16,7 +15,7 @@
             </div>
         @endif
 
-        <form action="{{ route('Pelanggan.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('customer.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
@@ -55,3 +54,4 @@
     </div>
 </div>
 @endsection
+

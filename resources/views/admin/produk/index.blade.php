@@ -28,7 +28,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr class="text-center">
-                        <th class="col-md-1">ID</th>
+                        <th class="col-md-1">No</th>
                         <th class="col-md-2">Nama</th>
                         <th class="col-md-2">Deskripsi</th>
                         <th class="col-md-1">Harga</th>
@@ -40,9 +40,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php $no = 1; @endphp
                     @foreach ($products as $product)
                     <tr>
-                        <td>{{ $product->id }}</td>
+                        <td>{{ $no++ }}</td>
                         <td>{{ $product->nama_produk }}</td>
                         <td>{{ $product->deskripsi }}</td>
                         <td>{{ $product->harga_produk }}</td>
@@ -55,7 +56,7 @@
                             <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Del</button>
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Del</button>
                             </form>
                         </td>
                     </tr>

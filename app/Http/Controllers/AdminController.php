@@ -81,13 +81,13 @@ class AdminController extends Controller
 
         $user->update($validatedData);
 
-        return redirect()->route('Admin.index')->with('success', 'Data Admin berhasil diperbarui');
+        return redirect()->route('users.index')->with('success', 'Data Admin berhasil diperbarui');
     }
 
     public function destroy(User $user): RedirectResponse
     {
         $user->delete();
-        return redirect()->route('Admin.index')->with('success', 'Data Admin berhasil dihapus');
+        return redirect()->route('users.index')->with('success', 'Data Admin berhasil dihapus');
     }
     // public function logout(Request $request){
     //     Auth::guard('web')->logout;

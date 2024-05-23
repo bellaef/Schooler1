@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <h2 class="text-center" style="color: rgb(81, 143, 201)">Edit Admin</h2>
+    <h2 class="text-center" style="color: rgb(81, 143, 201)">Edit Data Admin</h2>
     <div class="my-3 p-3 bg-body rounded shadow-sm">
         @if ($errors->any())
             <div class="alert alert-danger">
