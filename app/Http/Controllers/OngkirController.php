@@ -46,7 +46,6 @@ class OngkirController extends Controller
         $ongkir->update($validatedData);
 
         return redirect()->route('ongkirs.index')->with('success', 'Tarif ongkir berhasil diperbarui');
-            // $validation['gambar'] = $imageName;
     }
 
     public function destroy(Ongkir $ongkir): RedirectResponse
@@ -55,3 +54,4 @@ class OngkirController extends Controller
         return redirect()->route('ongkirs.index')->with('success', 'Tarif Ongkir berhasil dihapus');
     }
 }
+

@@ -21,20 +21,21 @@
                 <thead>
                     <tr class="text-center">
                         <th class="col-md-1">No</th>
-                        <th class="col-md-2">Kota</th>
-                        <th class="col-md-2">Tarif</th>
+                        <th class="col-md-1">Kota</th>
+                        <th class="col-md-1">Tarif</th>
+                        <th class="col-md-1">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @php $no = 1; @endphp
                     @foreach ($ongkirs as $ongkir)
-                    <tr>
+                    <tr class="text-center">
                         <td>{{ $no++ }}</td>
                         <td>{{ $ongkir->nama_kota }}</td>
                         <td>{{ $ongkir->tarif }}</td>
                         <td>
-                            <a href="{{ route('ongkirs.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('ongkirs.destroy', $product->id) }}" method="POST" style="display:inline-block;">
+                            <a href="{{ route('ongkirs.edit', $ongkir->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{{ route('ongkirs.destroy', $ongkir->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus tarif ini?')">Del</button>
@@ -44,7 +45,6 @@
                     @endforeach
                 </tbody>
             </table>
-
         </div>
         <!-- AKHIR DATA -->
     </main>

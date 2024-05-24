@@ -9,7 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OngkirController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('Schooler_Login');
 });
 
 Route::get('/dashboard', function () {
@@ -22,8 +22,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'login']);
+Route::get('Schooler_Login', [LoginController::class, 'showLoginForm'])->name('Schooler_Login');
+Route::post('Schooler_Login', [LoginController::class, 'Schooler_Login']);
 
 Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/Dashboard', [AdminController::class, 'showAdmin'])->name('admin.page');
