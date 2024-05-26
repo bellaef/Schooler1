@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OngkirController;
 use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', function () {
@@ -29,7 +30,7 @@ Route::post('login', [LoginController::class, 'login']);
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 Route::middleware(['auth', 'isAdmin'])->group(function(){
-    Route::get('/Dashboard', [AdminController::class, 'showAdmin'])->name('admin.page');
+    Route::get('/Dashboard', [DashboardController::class, 'index'])->name('admin.page');
     Route::resource('products', ProductController::class);
     Route::get('/Data_Produk',[ProductController::class,'index'])->name('product.page');
     Route::resource('users', AdminController::class);
