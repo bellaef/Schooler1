@@ -7,9 +7,11 @@ use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OngkirController;
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', function () {
-    return redirect()->route('Schooler_Login');
+    return redirect()->route('login');
 });
 
 Route::get('/dashboard', function () {
@@ -22,8 +24,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('Schooler_Login', [LoginController::class, 'showLoginForm'])->name('Schooler_Login');
-Route::post('Schooler_Login', [LoginController::class, 'Schooler_Login']);
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/Dashboard', [AdminController::class, 'showAdmin'])->name('admin.page');
@@ -35,6 +38,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/Data_Pelanggan', [PelangganController::class, 'index'])->name('datapelanggan.page');
     Route::get('/Data_Ongkir',[OngkirController::class,'index'])->name('ongkir.page');
     Route::resource('ongkirs', OngkirController::class);
+    Route::get('/Data_Penjualan',[PembelianController::class,'index'])->name('penjualan.page');
+    Route::resource('pembelians', PembelianController::class);
 });
 
 // Route::middleware(['auth', 'isAdmin'])->group(function(){

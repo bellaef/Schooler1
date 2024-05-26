@@ -42,11 +42,11 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+            <a class="sidebar-link {{Route::is('penjualan.page') || Route::is('pembelians.*') ? 'active' : '' }}" href="{{ route('penjualan.page') }}" aria-expanded="false">
               <span>
                 <i class="ti ti-alert-circle"></i>
               </span>
-              <span class="hide-menu">Pembelian</span>
+              <span class="hide-menu">Riwayat Penjualan</span>
             </a>
           </li>
           <li class="sidebar-item">
