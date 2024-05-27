@@ -42,7 +42,8 @@
                                 <input type="password" class="form-control" id="password" name="password" required>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-lg btn-black-default-hover" name="login">Login</button>
+                                <button class="btn btn-lg btn-black-default-hover mb-2" name="login">Login</button><br>
+                                <a href="{{ route('password.request') }}">Lupa password??</a>
                             </div>
                         </form>
                     </div>

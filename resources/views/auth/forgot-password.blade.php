@@ -1,25 +1,56 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schooler Forgot Password</title>
+    <link rel="shortcut icon" type="image/png" href="{{asset('images/images/LOGOSC.png')}}"/>
+    <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <br /><br />
+                <img src="{{ asset('assets/images/logo/logo_schooler.png') }}" class="user-image img-responsive" />
+                <h5>Lupa password? Kalem banh<br>Reset password aja yuk</h5>
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="text-center fw-bold" style="color:#000;">Forgot Password</h2>
+                    </div>
+                    <div class="panel-body">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <form role="form" method="POST" action="{{ route('password.email') }}">
+                            @csrf
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-lg btn-black-default-hover" name="login">Email Password Reset Link</button>
+                                <br>
+                                <a href="{{ route('login') }}">Back to Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    <script src="{{ asset('assets/js/jquery-1.10.2.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.metisMenu.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+</body>
+</html>
