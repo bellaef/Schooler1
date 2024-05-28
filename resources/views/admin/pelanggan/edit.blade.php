@@ -45,13 +45,13 @@
                 <label for="alamat" class="form-label">Alamat</label>
                 <textarea class="form-control" id="alamat" name="alamat">{{ old('alamat', $customer->alamat) }}</textarea>
             </div>
-            {{-- <div class="mb-3">
+            <div class="mb-3">
                 <label for="foto" class="form-label">Foto</label>
                 <input type="file" class="form-control" id="foto" name="foto">
                 @if ($customer->foto)
                     <img src="{{ asset('images/images/user/' . $customer->foto) }}" alt="Foto" width="100">
                 @endif
-            </div> --}}
+            </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

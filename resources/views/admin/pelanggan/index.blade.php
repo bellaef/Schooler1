@@ -26,7 +26,7 @@
                         <th class="col-md-2">Email</th>
                         <th class="col-md-1">Telepon</th>
                         <th class="col-md-2">Alamat</th>
-                        {{-- <th class="col-md-2">Foto</th> --}}
+                        <th class="col-md-2">Foto</th>
                         <th class="col-md-2">Aksi</th>
                     </tr>
                 </thead>
@@ -40,7 +40,7 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->telepon }}</td>
                         <td>{{ $user->alamat }}</td>
-                        {{-- <td><img src="{{ asset('images/images/user/' . $user->foto) }}" width="100"></td> --}}
+                        <td><img src="{{ asset('images/images/user/' . $user->foto) }}" width="100"></td>
                         <td>
                             <a href="{{ route('customer.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
                             <form action="{{ route('customer.destroy', $user->id) }}" method="POST" style="display:inline-block;">
