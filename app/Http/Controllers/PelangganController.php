@@ -118,14 +118,14 @@ class PelangganController extends Controller
             'password' => 'required|string|min:8|confirmed',
             'telepon' => 'required|string|max:15',
             'alamat' => 'required|string',
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        if ($request->hasFile('foto')) {
-            $imageName = time() . '.' . $request->foto->extension();
-            $request->foto->move(public_path('images/images/user'), $imageName);
-            $validatedData['foto'] = $imageName;
-        }
+        // if ($request->hasFile('foto')) {
+        //     $imageName = time() . '.' . $request->foto->extension();
+        //     $request->foto->move(public_path('images/images/user'), $imageName);
+        //     $validatedData['foto'] = $imageName;
+        // }
 
         $validatedData['password'] = Hash::make($request->password);
         $validatedData['role'] = 'pelanggan';
