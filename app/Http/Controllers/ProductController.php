@@ -75,4 +75,16 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Produk berhasil dihapus');
     }
+
+    public function search(Request $request): View
+{
+    $searchKeyword = $request->input('katakunci');
+
+    $products = Product::where('nama_produk', 'LIKE', "%$searchKeyword%")
+                        ->orWhere('deskripsi', 'LIKE', "%$searchKeyword%")
+                        ->orWhere('kategori', 'LIKE', "%$searchKeyword%")
+                        ->get();
+
+    return view('admin.produk.index', compact('products'));
+}
 }

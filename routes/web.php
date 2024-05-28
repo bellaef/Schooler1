@@ -44,11 +44,11 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::resource('pembelians', PembelianController::class);
     // Tambahkan route untuk menampilkan profil admin
     Route::get('/admin/profile', [ProfilController::class, 'showProfil'])->name('admin.profile.show');
-
     // Hapus route duplikat untuk /profile
     Route::get('/profile', [ProfilController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfilController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfilController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/Cari_Produk', [ProductController::class, 'search'])->name('products.search');
 });
 
 // Route::middleware(['auth', 'isAdmin'])->group(function(){
