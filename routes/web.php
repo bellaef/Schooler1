@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OngkirController;
 use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', function () {
@@ -41,6 +42,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::resource('ongkirs', OngkirController::class);
     Route::get('/Data_Penjualan',[PembelianController::class,'index'])->name('penjualan.page');
     Route::resource('pembelians', PembelianController::class);
+    // Tambahkan route untuk menampilkan profil admin
+    Route::get('/admin/profile', [ProfilController::class, 'showProfil'])->name('admin.profile.show');
+
+    // Hapus route duplikat untuk /profile
+    Route::get('/profile', [ProfilController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfilController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfilController::class, 'destroy'])->name('profile.destroy');
 });
 
 // Route::middleware(['auth', 'isAdmin'])->group(function(){
