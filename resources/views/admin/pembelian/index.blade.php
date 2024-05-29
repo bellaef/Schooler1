@@ -2,18 +2,18 @@
 
 @section('content')
 <div class="container-fluid">
-    <h2 class="text-center" style="color: rgb(81, 143, 201)">Daftar Pembelian</h2>
+    <h2 class="text-center" style="color: rgb(81, 143, 201)">Riwayat Penjualan</h2>
     @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-    <a href="{{ route('pembelians.create') }}" class="btn btn-primary">Tambah Pembelian</a>
+    {{-- <a href="{{ route('pembelians.create') }}" class="btn btn-primary">Tambah Pembelian</a> --}}
     <table class="table mt-3">
         <thead>
             <tr>
                 <th>No</th>
                 <th>Nama Pelanggan</th>
-                <th>Tanggal Pembelian</th>
-                <th>Total Pembelian</th>
+                <th>Tanggal Transaksi</th>
+                <th>Total Harga</th>
                 <th>Aksi</th>
             </tr>
         </thead>

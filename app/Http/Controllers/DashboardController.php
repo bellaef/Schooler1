@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\pembelian_produk;
+use App\Models\Pembelian;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\View\View;
@@ -21,6 +22,7 @@ class DashboardController extends Controller
         $jumlahTotalProduk = Product::count();
         $jumlahProdukTerjual = pembelian_produk::sum('jumlah');
         $produkDenganStokTersedikit = Product::orderBy('stok_produk')->first();
+        $totalPemasukan = pembelian::sum('total_pembelian');
         $produkTerlaris = pembelian_produk::select('product_id')
             ->groupBy('product_id')
             ->orderByRaw('SUM(jumlah) DESC')
@@ -36,7 +38,8 @@ class DashboardController extends Controller
             'jumlahTotalProduk',
             'jumlahProdukTerjual',
             'produkDenganStokTersedikit',
-            'produkTerlarisInfo'
+            'produkTerlarisInfo',
+            'totalPemasukan'
         ));
     }
 }

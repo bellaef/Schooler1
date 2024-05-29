@@ -15,25 +15,27 @@
         <h4>Here's Schooler recap</h4>
     </div>
     <div class="row mt-2">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card">
-                <div class="card-header" style="background-color: rgba(81, 143, 201, 0.151)">Jumlah Admin</div>
+                <div class="card-header" style="background-color: rgba(81, 143, 201, 0.151)">Total Admin</div>
                 <div class="card-body">{{ $jumlahAdmin }}</div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card">
-                <div class="card-header" style="background-color: rgba(81, 143, 201, 0.151)">Jumlah Pelanggan</div>
+                <div class="card-header" style="background-color: rgba(81, 143, 201, 0.151)">Total Pelanggan</div>
                 <div class="card-body">{{ $jumlahPelanggan }}</div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card">
-                <div class="card-header" style="background-color: rgba(81, 143, 201, 0.151)">Jumlah Produk</div>
+                <div class="card-header" style="background-color: rgba(81, 143, 201, 0.151)">Total Produk</div>
                 <div class="card-body">{{ $jumlahTotalProduk }}</div>
             </div>
         </div>
-        <div class="col-md-3">
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-header" style="background-color: rgba(81, 143, 201, 0.151)">Produk yg Harus Di-restock</div>
                 <div class="card-body">
@@ -42,7 +44,13 @@
                 </div>
             </div>
         </div>
-        <!-- Tambahkan card lainnya sesuai dengan data yang ingin ditampilkan -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" style="background-color: rgba(81, 143, 201, 0.151)">Total Pemasukan</div>
+                <div class="card-body">{{ $totalPemasukan }}</div>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 @endsection
